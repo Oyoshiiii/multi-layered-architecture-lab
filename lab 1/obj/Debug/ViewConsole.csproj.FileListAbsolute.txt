@@ -1,0 +1,7 @@
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\lab 1.exe.config
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\lab 1.exe
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\lab 1.pdb
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewConsole.csproj.AssemblyReference.cache
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewConsole.csproj.CoreCompileInputs.cache
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.pdb
