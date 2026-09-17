@@ -8,6 +8,7 @@ namespace Model
 {
     public class Prosthesis
     {
+        public int Id { get; set; }
         public string ModelName { get; set; }
         public string BodyPart { get; set; }
         public int PercentOfSanityLoss { get; set; }
