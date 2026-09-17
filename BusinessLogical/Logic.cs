@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogical
+namespace BusinessLogic
 {
     public class Logic
     {
@@ -46,6 +46,7 @@ namespace BusinessLogical
             {
                 prosthesis.ModelName = modelName;
                 prosthesis.BodyPart = bodyPart;
+                prosthesis.PercentOfSanityLoss = percentOfSanityLoss;
                 prosthesis.BuffDescription = buffDescript;
                 prosthesis.DebuffDescription = debuffDescript;
                 prosthesis.Origin = origin;

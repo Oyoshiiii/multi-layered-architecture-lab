@@ -5,3 +5,9 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewConsole.csproj.CoreCompileInputs.cache
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.pdb
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogical.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogical.pdb
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.pdb
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe.config
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons.26CF079E.Up2Date

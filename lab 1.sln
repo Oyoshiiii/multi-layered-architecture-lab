@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37628.2 d17.14
+VisualStudioVersion = 17.14.37628.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewConsole", "lab 1\ViewConsole.csproj", "{F05B7541-9ACD-4755-A810-801E8ECEF2D8}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewWinForms", "ViewWinForm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{590ABD0A-4A06-48CE-967E-235F88CA9160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogical", "BusinessLogical\BusinessLogical.csproj", "{EEA1C547-9606-435A-A231-823F1D537D04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogical\BusinessLogic.csproj", "{EEA1C547-9606-435A-A231-823F1D537D04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
