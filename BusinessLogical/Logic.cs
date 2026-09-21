@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DataLayer;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,14 @@ namespace BusinessLogic
 {
     public class Logic
     {
+        DataProsthesis data = new DataProsthesis();
         List<Prosthesis> Prostheses = new List<Prosthesis>();
 
+        public Logic()
+        {
+            Prostheses = data.Prostheses;
+        }
+        
         public void AddProsthesis(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
         {
             Prosthesis prosthesis = new Prosthesis()
@@ -63,6 +70,11 @@ namespace BusinessLogic
             }
         }
 
+        //сделать группировку по частям тела с выводом всех групп + % по возрастанию
+        //сделать поиск (по сути группировку) по месту нахождения 
+        //сделать получение листов с частями тела и местами нахождения протезов
+
+        //эти группировку и сортировки убрать/изменить
         public List<Prosthesis> GroupByBodyPart(string bodyPart)
         {
             List<Prosthesis> groupedProstheses = Prostheses.Where(pr =>  pr.BodyPart == bodyPart).ToList();

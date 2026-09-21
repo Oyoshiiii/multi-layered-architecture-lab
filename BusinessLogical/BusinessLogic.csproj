@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\DataLayer.csproj">
+      <Project>{d9b1cc3f-8501-4cc4-9f33-3054e70c877c}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{590abd0a-4a06-48ce-967e-235f88ca9160}</Project>
       <Name>Model</Name>
