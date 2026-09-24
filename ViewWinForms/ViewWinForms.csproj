@@ -46,16 +46,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StartForm.cs">
+    <Compile Include="AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm.Designer.cs">
-      <DependentUpon>StartForm.cs</DependentUpon>
+    <Compile Include="AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeForm.Designer.cs">
+      <DependentUpon>ChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindByOriginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindByOriginForm.Designer.cs">
+      <DependentUpon>FindByOriginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupedByBodyPartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupedByBodyPartsForm.Designer.cs">
+      <DependentUpon>GroupedByBodyPartsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="StartForm.resx">
-      <DependentUpon>StartForm.cs</DependentUpon>
+    <Compile Include="SearchByIdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchByIdForm.Designer.cs">
+      <DependentUpon>SearchByIdForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeForm.resx">
+      <DependentUpon>ChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindByOriginForm.resx">
+      <DependentUpon>FindByOriginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupedByBodyPartsForm.resx">
+      <DependentUpon>GroupedByBodyPartsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchByIdForm.resx">
+      <DependentUpon>SearchByIdForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
