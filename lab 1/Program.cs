@@ -14,7 +14,7 @@ namespace ViewConsole
         //удалить лист и заменить на получение с бизнес-логики
         //также с местом нахождения протеза
         //убрать сортировки, заменить группировку по частям тела и добавить по месту нахождения
-
+        /*
         static List<string> bodyParts = new List<string>() { "Руки", "Ноги", "Спина", "Голова", "Торс" };
         static void Main(string[] args)
         {
@@ -498,5 +498,6 @@ namespace ViewConsole
             List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending();
             GetAll(sortedProstheses);
         }
+        */
     }
 }

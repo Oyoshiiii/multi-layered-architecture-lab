@@ -11,11 +11,17 @@ namespace BusinessLogic
     public class Logic
     {
         DataProsthesis data = new DataProsthesis();
-        List<Prosthesis> Prostheses = new List<Prosthesis>();
+
+        List<Prosthesis> prostheses = new List<Prosthesis>();
+
+        List<string> bodyParts = new List<string>();
+        List<string> origin = new List<string>();
 
         public Logic()
         {
-            Prostheses = data.Prostheses;
+            prostheses = data.Prostheses;
+            bodyParts = data.BodyParts;
+            origin = data.Origin;
         }
         
         public void AddProsthesis(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
@@ -31,17 +37,17 @@ namespace BusinessLogic
                 Origin = origin
             };
 
-            Prostheses.Add(prosthesis);
+            prostheses.Add(prosthesis);
         }
 
         public List<Prosthesis> GetAllProstheses()
         {
-            return Prostheses;
+            return prostheses;
         }
 
         public Prosthesis GetProsthesisById(int id)
         {
-            Prosthesis prosthesis = Prostheses.Find(pr => pr.Id == id);
+            Prosthesis prosthesis = prostheses.Find(pr => pr.Id == id);
             return prosthesis;
         }
 
@@ -66,30 +72,44 @@ namespace BusinessLogic
 
             if(prosthesis != null)
             {
-                Prostheses.Remove(prosthesis);
+                prostheses.Remove(prosthesis);
             }
         }
 
-        //сделать группировку по частям тела с выводом всех групп + % по возрастанию
-        //сделать поиск (по сути группировку) по месту нахождения 
-        //сделать получение листов с частями тела и местами нахождения протезов
-
-        //эти группировку и сортировки убрать/изменить
-        public List<Prosthesis> GroupByBodyPart(string bodyPart)
+        public List<string> GetBodyPartsList()
         {
-            List<Prosthesis> groupedProstheses = Prostheses.Where(pr =>  pr.BodyPart == bodyPart).ToList();
+            return bodyParts;
+        }
+
+        public List<string> GetOriginList()
+        {
+            return origin;
+        }
+
+        public List<Prosthesis> GroupByAllBodyParts()
+        {
+            List<Prosthesis> groupedProstheses = new List<Prosthesis>();
+
+            foreach (string bodyPart in bodyParts)
+            {
+                List<Prosthesis> groupedBySpecificBodyPart = prostheses.Where(pr => pr.BodyPart ==  bodyPart).ToList();
+                groupedBySpecificBodyPart = SortByPercentOfSanityLoss(groupedBySpecificBodyPart);
+
+                groupedProstheses.AddRange(groupedBySpecificBodyPart);
+            }
+
             return groupedProstheses;
         }
 
-        public List<Prosthesis> SortByPercentOfSanityLoss()
+        public List<Prosthesis> GroupBySpecificOrigin(string origin)
         {
-            List<Prosthesis> sortedProstheses = Prostheses.OrderBy(pr => pr.PercentOfSanityLoss).ToList();
-            return sortedProstheses;
+            List<Prosthesis> groupedProstheses = prostheses.Where(pr => pr.Origin == origin).ToList();
+            return groupedProstheses;
         }
 
-        public List<Prosthesis> SortByPercentOfSanityLossDescending()
+        List<Prosthesis> SortByPercentOfSanityLoss(List<Prosthesis> prosthesesList)
         {
-            List<Prosthesis> sortedProstheses = Prostheses.OrderByDescending(pr => pr.PercentOfSanityLoss).ToList();
+            List<Prosthesis> sortedProstheses = prosthesesList.OrderBy(pr => pr.PercentOfSanityLoss).ToList();
             return sortedProstheses;
         }
     }

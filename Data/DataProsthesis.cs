@@ -39,7 +39,7 @@ namespace DataLayer
             "Руки", "Ноги", "Спина", "Торс", "Голова"
         };
 
-        public readonly List<string> OriginLocation = new List<string>()
+        public readonly List<string> Origin = new List<string>()
         {
             "Без привязки к локации", "Шахта", "Склад запчастей", "Цех тяжелой сборки",
             "Лаборатория", "Экспериментальный цех", "Пустоши", "Наземная часть станции",
