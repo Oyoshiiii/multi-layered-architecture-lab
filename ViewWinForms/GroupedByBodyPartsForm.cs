@@ -15,6 +15,11 @@ namespace ViewWinForms
     public partial class GroupedByBodyPartsForm : Form
     {
         List<Prosthesis> prostheses = new List<Prosthesis>();
+
+        /// <summary>
+        /// Инициализация формы группировки протезов по всем частям тела
+        /// </summary>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         public GroupedByBodyPartsForm(Logic logic)
         {
             InitializeComponent();

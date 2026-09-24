@@ -15,6 +15,11 @@ namespace ViewWinForms
     public partial class SearchByIdForm : Form
     {
         Logic logic = new Logic();
+
+        /// <summary>
+        /// Инициализация формы поиска протеза по ID
+        /// </summary>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         public SearchByIdForm(Logic logic)
         {
             InitializeComponent();

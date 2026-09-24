@@ -16,6 +16,14 @@ namespace ViewWinForms
     {
         Logic logic = new Logic();
         Prosthesis prosthesis;
+
+        /// <summary>
+        /// Инициализация формы изменения протеза
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
+        /// <param name="bodyParts">Лист частей тела</param>
+        /// <param name="originList">Лист локаций/мест нахождения</param>
         public ChangeForm(Prosthesis prosthesis, Logic logic, List<string> bodyParts, List<string> originList)
         {
             InitializeComponent();

@@ -16,6 +16,11 @@ namespace ViewWinForms
     {
         Logic logic = new Logic();
         List<Prosthesis> prostheses = new List<Prosthesis>();
+
+        /// <summary>
+        /// Инициализация формы поиска протезов по локации/месту нахождения
+        /// </summary>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         public FindByOriginForm(Logic logic)
         {
             InitializeComponent();

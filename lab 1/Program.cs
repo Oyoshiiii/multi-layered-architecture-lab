@@ -86,6 +86,13 @@ namespace ViewConsole
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Консольное добавление протеза
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
+        /// <param name="bodyParts">Лист частей тела</param>
+        /// <param name="originList">Лист локаций/мест нахождения</param>
         static void Add(List<Prosthesis> prostheses, Logic logic, List<string> bodyParts, List<string> originList)
         {
             int id = 0, percentOfSanityLoss = 0;
@@ -196,6 +203,10 @@ namespace ViewConsole
             Console.WriteLine("\nПротез добавлен");
         }
 
+        /// <summary>
+        /// Консольный вывод листа протезов
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
         static void GetAll(List<Prosthesis> prostheses)
         {
             foreach(Prosthesis prosthesis in prostheses)
@@ -204,6 +215,10 @@ namespace ViewConsole
             }
         }
 
+        /// <summary>
+        /// Консольный вывод протеза
+        /// </summary>
+        /// <param name="prosthesis">Протез</param>
         static void GetProsthesis(Prosthesis prosthesis)
         {
             Console.WriteLine("\n----------------------------------------------------------\n" +
@@ -212,6 +227,10 @@ namespace ViewConsole
                     "\n----------------------------------------------------------\n");
         }
 
+        /// <summary>
+        /// Консольный вывод протеза по ID
+        /// </summary>
+        /// <param name="prostheses">Протез</param>
         static void GetById(List<Prosthesis> prostheses)
         {
             int id = 0;
@@ -235,6 +254,13 @@ namespace ViewConsole
             }
         }
 
+        /// <summary>
+        /// Консольное изменение протеза
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
+        /// <param name="bodyParts">Лист частей тела</param>
+        /// <param name="originList">Лист локаций/мест нахождения</param>
         static void Change(List<Prosthesis> prostheses, Logic logic, List<string> bodyParts, List<string> originList)
         {
             int id = 0;
@@ -480,6 +506,11 @@ namespace ViewConsole
             }
         }
 
+        /// <summary>
+        /// Консольное удаление протеза
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         static void Delete(List<Prosthesis> prostheses, Logic logic)
         {
             int id = 0;
@@ -505,13 +536,23 @@ namespace ViewConsole
             }
         }
 
+        /// <summary>
+        /// Консольная группировка протезов по всем частям тела
+        /// </summary>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
+        /// <param name="bodyParts">Лист частей тела</param>
         static void GroupByAllBodyParts(Logic logic, List<string> bodyParts)
         {
             List<Prosthesis> groupedProstheses = logic.GroupByAllBodyParts();
             GetAll(groupedProstheses);
         }
 
-        static void FindByOrigin(Logic logic, List<string> origin)
+        /// <summary>
+        /// Консольный поиск протезов по конкретному месту нахождения
+        /// </summary>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
+        /// <param name="originList">Лист локаций/мест нахождения</param>
+        static void FindByOrigin(Logic logic, List<string> originList)
         {
             bool valid = false;
             int originChoice = 0;
@@ -519,9 +560,9 @@ namespace ViewConsole
             while (!valid)
             {
                 Console.WriteLine("Выберите локацию/место нахождения для вывода протезов, которые можно там найти");
-                for (int i = 0; i < origin.Count; i++)
+                for (int i = 0; i < originList.Count; i++)
                 {
-                    Console.WriteLine($"[{i + 1}.] {origin[i]}");
+                    Console.WriteLine($"[{i + 1}.] {originList[i]}");
                 }
                 Console.Write("Ввод: ");
 
@@ -539,18 +580,28 @@ namespace ViewConsole
                 valid = true;
             }
 
-            string chosenOrigin = origin[originChoice - 1];
+            string chosenOrigin = originList[originChoice - 1];
             List<Prosthesis> groupedProstheses = logic.GroupBySpecificOrigin(chosenOrigin);
 
             GetAll(groupedProstheses);
         }
 
+        /// <summary>
+        /// Консольная сортировка по возрастанию % потери рассудка
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         static void SortPercentOfSanityLoss(List<Prosthesis> prostheses, Logic logic)
         {
             List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss(prostheses);
             GetAll(sortedProstheses);
         }
 
+        /// <summary>
+        /// Консольная сортировка по убыванию % потери рассудка
+        /// </summary>
+        /// <param name="prostheses">Лист протезов</param>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         static void SortByPercentOfSanityLossDescending(List<Prosthesis> prostheses, Logic logic)
         {
             List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending(prostheses);

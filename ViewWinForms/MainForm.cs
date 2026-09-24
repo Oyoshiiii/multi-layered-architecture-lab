@@ -20,6 +20,9 @@ namespace ViewWinForms
         List<string> bodyParts = new List<string>();
         List<string> originList = new List<string>();
 
+        /// <summary>
+        /// Инициализация главной формы
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();

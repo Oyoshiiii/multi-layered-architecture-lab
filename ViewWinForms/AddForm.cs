@@ -15,6 +15,13 @@ namespace ViewWinForms
     public partial class AddForm : Form
     {
         Logic logic = new Logic();
+
+        /// <summary>
+        /// Инициализация формы добавления протеза
+        /// </summary>
+        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
+        /// <param name="bodyParts">Лист частей тела</param>
+        /// <param name="originList">Лист локаций/мест нахождения</param>
         public AddForm(Logic logic, List<string> bodyParts, List<string> originList)
         {
             InitializeComponent();
