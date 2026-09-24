@@ -11,3 +11,5 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Business
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.pdb
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe.config
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons.26CF079E.Up2Date
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Data.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Data.pdb

@@ -20,8 +20,8 @@ namespace BusinessLogic
         public Logic()
         {
             prostheses = data.Prostheses;
-            bodyParts = data.BodyParts;
-            origin = data.Origin;
+            bodyParts = DataProsthesis.BodyParts;
+            origin = DataProsthesis.Origin;
         }
         
         public void AddProsthesis(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
@@ -107,9 +107,15 @@ namespace BusinessLogic
             return groupedProstheses;
         }
 
-        List<Prosthesis> SortByPercentOfSanityLoss(List<Prosthesis> prosthesesList)
+        public List<Prosthesis> SortByPercentOfSanityLoss(List<Prosthesis> prosthesesList)
         {
             List<Prosthesis> sortedProstheses = prosthesesList.OrderBy(pr => pr.PercentOfSanityLoss).ToList();
+            return sortedProstheses;
+        }
+
+        public List<Prosthesis> SortByPercentOfSanityLossDescending(List<Prosthesis> prosthesesList)
+        {
+            List<Prosthesis> sortedProstheses = prosthesesList.OrderByDescending(pr => pr.PercentOfSanityLoss).ToList();
             return sortedProstheses;
         }
     }

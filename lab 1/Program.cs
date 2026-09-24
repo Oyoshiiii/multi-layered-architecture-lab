@@ -11,29 +11,29 @@ namespace ViewConsole
 {
     internal class Program
     {
-        //удалить лист и заменить на получение с бизнес-логики
-        //также с местом нахождения протеза
-        //убрать сортировки, заменить группировку по частям тела и добавить по месту нахождения
-        /*
-        static List<string> bodyParts = new List<string>() { "Руки", "Ноги", "Спина", "Голова", "Торс" };
         static void Main(string[] args)
         {
             Logic logic = new Logic();
+
             List<Prosthesis> prostheses = logic.GetAllProstheses();
+
+            List<string> bodyParts = logic.GetBodyPartsList();
+            List<string> originList = logic.GetOriginList();
 
             int userChoice = 0;
 
-            while (userChoice != 9)
+            while (userChoice != 10)
             {
                 Console.Write("[1.] Вывести все протезы\n" +
                     "[2.] Вывести протез по Id\n" +
                     "[3.] Добавить протез\n" +
                     "[4.] Изменить протез\n" +
                     "[5.] Удалить протез\n" +
-                    "[6.] Группировать по расположению протезов на теле\n" +
-                    "[7.] Сортировать по % потери рассудка по возрастанию\n" +
+                    "[6.] Группировать по расположению на теле и вывести все протезы\n" +
+                    "[7.] Поиск по местам нахождения протезов\n" +
                     "[8.] Сортировать по % потери рассудка по убыванию\n" +
-                    "[9.] Выход\n\n" +
+                    "[9.] Сортировать по % потери рассудка по возрастанию\n" +
+                    "[10.] Выход\n\n" +
                     "Ввод: ");
 
                 while(!int.TryParse(Console.ReadLine(), out userChoice))
@@ -42,8 +42,9 @@ namespace ViewConsole
                 }
 
                 Console.Clear();
+                Console.Write("\x1b[3J");
 
-                switch(userChoice)
+                switch (userChoice)
                 {
                     case 1:
                         GetAll(prostheses);
@@ -52,22 +53,25 @@ namespace ViewConsole
                         GetById(prostheses);
                         break;
                     case 3:
-                        Add(prostheses, logic);
+                        Add(prostheses, logic, bodyParts, originList);
                         break;
                     case 4:
-                        Change(prostheses, logic);
+                        Change(prostheses, logic, bodyParts, originList);
                         break;
                     case 5:
                         Delete(prostheses, logic);
                         break;
                     case 6:
-                        GroupByBodyPart(logic);
+                        GroupByAllBodyParts(logic, bodyParts);
                         break;
                     case 7:
-                        SortPercentOfSanityLoss(logic);
+                        FindByOrigin(logic, originList);
                         break;
                     case 8:
-                        SortByPercentOfSanityLossDescending(logic);
+                        SortPercentOfSanityLoss(prostheses, logic);
+                        break;
+                    case 9:
+                        SortByPercentOfSanityLossDescending(prostheses, logic);
                         break;
                 }
 
@@ -75,13 +79,14 @@ namespace ViewConsole
                 Console.ReadKey();
 
                 Console.Clear();
+                Console.Write("\x1b[3J");
             }
 
             Console.WriteLine("\n\tВыход из консоли ->");
             Console.ReadKey();
         }
 
-        static void Add(List<Prosthesis> prostheses, Logic logic)
+        static void Add(List<Prosthesis> prostheses, Logic logic, List<string> bodyParts, List<string> originList)
         {
             int id = 0, percentOfSanityLoss = 0;
             string modelName, bodyPart, buffDescript, debuffDescript, origin;
@@ -144,7 +149,7 @@ namespace ViewConsole
                     Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
                     continue;
                 }
-                if (bodyPartChoice < 1 || bodyPartChoice > 5)
+                if (bodyPartChoice < 1 || bodyPartChoice > bodyParts.Count)
                 {
                     Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
                     continue;
@@ -160,8 +165,31 @@ namespace ViewConsole
             Console.Write("Введите описание дебаффов: ");
             debuffDescript = Console.ReadLine();
 
-            Console.Write("Введите происхождение протеза или место/а, где его можно получить: ");
-            origin = Console.ReadLine();
+            int originChoice = 0;
+            valid = false;
+            while (!valid)
+            {
+                Console.WriteLine("Выберите локацию/место нахождения протеза");
+                for (int i = 0; i < originList.Count; i++)
+                {
+                    Console.WriteLine($"[{i + 1}.] {originList[i]}");
+                }
+                Console.Write("Ввод: ");
+
+                if (!int.TryParse(Console.ReadLine(), out originChoice))
+                {
+                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
+                    continue;
+                }
+                if (originChoice < 1 || originChoice > originList.Count)
+                {
+                    Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
+                    continue;
+                }
+
+                valid = true;
+            }
+            origin = originList[originChoice - 1];
 
             logic.AddProsthesis(id, modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
 
@@ -178,8 +206,10 @@ namespace ViewConsole
 
         static void GetProsthesis(Prosthesis prosthesis)
         {
-            Console.WriteLine(prosthesis.Id + "\t" + prosthesis.ModelName + "\t" + prosthesis.PercentOfSanityLoss + "%\t" +
-                    prosthesis.BodyPart + "\t" + prosthesis.BuffDescription + "\t" + prosthesis.DebuffDescription + "\t" + prosthesis.Origin);
+            Console.WriteLine("\n----------------------------------------------------------\n" +
+                    "ID: " + prosthesis.Id + "\nМодель: " + prosthesis.ModelName + "\n% потери рассудка: " + prosthesis.PercentOfSanityLoss + "%\nЧасть тела: " +
+                    prosthesis.BodyPart + "\nБаффы: " + prosthesis.BuffDescription + "\nДебаффы: " + prosthesis.DebuffDescription + "\nЛокация/место нахождения: " + prosthesis.Origin +
+                    "\n----------------------------------------------------------\n");
         }
 
         static void GetById(List<Prosthesis> prostheses)
@@ -205,7 +235,7 @@ namespace ViewConsole
             }
         }
 
-        static void Change(List<Prosthesis> prostheses, Logic logic)
+        static void Change(List<Prosthesis> prostheses, Logic logic, List<string> bodyParts, List<string> originList)
         {
             int id = 0;
 
@@ -396,7 +426,7 @@ namespace ViewConsole
                 valid = false;
                 while (!valid)
                 {
-                    Console.Write("Изменить происхождение?\n[1.] Да\n[2.] Нет\nВвод: ");
+                    Console.Write("Изменить локацию/место нахождения?\n[1.] Да\n[2.] Нет\nВвод: ");
 
                     if (!int.TryParse(Console.ReadLine(), out choice))
                     {
@@ -414,8 +444,30 @@ namespace ViewConsole
 
                 if (choice == 1)
                 {
-                    Console.Write("Введите новое происхождение протеза: ");
-                    origin = Console.ReadLine();
+                    valid = false;
+                    while (!valid)
+                    {
+                        Console.WriteLine("Выберите локацию/место нахождения протеза:");
+                        for (int i = 0; i < originList.Count; i++)
+                        {
+                            Console.WriteLine($"[{i + 1}.] {originList[i]}");
+                        }
+                        Console.Write("Ввод: ");
+
+                        if (!int.TryParse(Console.ReadLine(), out choice))
+                        {
+                            Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
+                            continue;
+                        }
+                        if (choice < 1 || choice > originList.Count)
+                        {
+                            Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
+                            continue;
+                        }
+
+                        valid = true;
+                    }
+                    origin = originList[choice - 1];
                 }
                 else origin = prostheses.Find(pr => pr.Id == id).Origin;
 
@@ -453,26 +505,32 @@ namespace ViewConsole
             }
         }
 
-        static void GroupByBodyPart(Logic logic)
+        static void GroupByAllBodyParts(Logic logic, List<string> bodyParts)
+        {
+            List<Prosthesis> groupedProstheses = logic.GroupByAllBodyParts();
+            GetAll(groupedProstheses);
+        }
+
+        static void FindByOrigin(Logic logic, List<string> origin)
         {
             bool valid = false;
-            int bodyPartChoice = 0;
+            int originChoice = 0;
 
             while (!valid)
             {
-                Console.WriteLine("Выберите часть тела, на которую крепится протез или которую он заменяет");
-                for (int i = 0; i < bodyParts.Count; i++)
+                Console.WriteLine("Выберите локацию/место нахождения для вывода протезов, которые можно там найти");
+                for (int i = 0; i < origin.Count; i++)
                 {
-                    Console.WriteLine($"[{i + 1}.] {bodyParts[i]}");
+                    Console.WriteLine($"[{i + 1}.] {origin[i]}");
                 }
                 Console.Write("Ввод: ");
 
-                if (!int.TryParse(Console.ReadLine(), out bodyPartChoice))
+                if (!int.TryParse(Console.ReadLine(), out originChoice))
                 {
                     Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
                     continue;
                 }
-                if (bodyPartChoice < 1 || bodyPartChoice > 5)
+                if (originChoice < 1 || originChoice > 5)
                 {
                     Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
                     continue;
@@ -481,23 +539,22 @@ namespace ViewConsole
                 valid = true;
             }
 
-            string bodyPart = bodyParts[bodyPartChoice - 1];
-            List<Prosthesis> groupedProstheses = logic.GroupByBodyPart(bodyPart);
+            string chosenOrigin = origin[originChoice - 1];
+            List<Prosthesis> groupedProstheses = logic.GroupBySpecificOrigin(chosenOrigin);
 
             GetAll(groupedProstheses);
         }
 
-        static void SortPercentOfSanityLoss(Logic logic)
+        static void SortPercentOfSanityLoss(List<Prosthesis> prostheses, Logic logic)
         {
-            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss();
+            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss(prostheses);
             GetAll(sortedProstheses);
         }
 
-        static void SortByPercentOfSanityLossDescending(Logic logic)
+        static void SortByPercentOfSanityLossDescending(List<Prosthesis> prostheses, Logic logic)
         {
-            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending();
+            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending(prostheses);
             GetAll(sortedProstheses);
         }
-        */
     }
 }
