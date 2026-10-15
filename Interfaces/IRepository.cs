@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    interface IRepository<T> : IDisposable where T : IDomainObject, new()
+    public interface IRepository<T> where T : IDomainObject, new()
     {
         void Add(T obj);
         IEnumerable<T> ReadAll();
