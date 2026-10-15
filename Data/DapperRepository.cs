@@ -18,6 +18,9 @@ namespace Data
         private string tableName;
         private PropertyInfo[] properties;
 
+        /// <summary>
+        /// Инициализация репозитория для работы с сущностями через Dapper
+        /// </summary>
         public DapperRepository()
         {
             connectionString = "Data Source=(LocalDB)\\" +
@@ -40,6 +43,10 @@ namespace Data
             }
         }
 
+        /// <summary>
+        /// Добавление сущности в БД
+        /// </summary>
+        /// <param name="entity">Добавляемая сущность</param>
         public void Add(T entity)
         {
             var propertiesWithoutId = this.properties.Where(p => p.Name != "Id").ToArray();
@@ -51,6 +58,11 @@ namespace Data
 
             UseScript(script, entity);
         }
+
+        /// <summary>
+        /// Чтение всех сущностей из БД
+        /// </summary>
+        /// <returns>Лист сущностей</returns>
         public IEnumerable<T> ReadAll()
         {
             List<T> entities;
@@ -63,6 +75,11 @@ namespace Data
             return entities;
         }
 
+        /// <summary>
+        /// Чтение сущности из БД по Id
+        /// </summary>
+        /// <param name="id">Id сущности</param>
+        /// <returns>Найденная сущность</returns>
         public T ReadById(int id)
         {
             T entity;
@@ -75,6 +92,10 @@ namespace Data
             return entity;
         }
 
+        /// <summary>
+        /// Обновление сущности в БД
+        /// </summary>
+        /// <param name="entity">Обновляемая сущность</param>
         public void Update(T entity)
         {
             var id = properties.FirstOrDefault(p => p.Name == "Id");
@@ -87,6 +108,10 @@ namespace Data
             UseScript(script, entity);
         }
 
+        /// <summary>
+        /// Удаление сущности из БД
+        /// </summary>
+        /// <param name="entity">Удаляемая сущность</param>
         public void Delete(T entity)
         {
             var idProperty = properties.FirstOrDefault(p => p.Name == "Id");

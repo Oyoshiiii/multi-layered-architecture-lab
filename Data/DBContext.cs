@@ -10,8 +10,14 @@ namespace Data
 {
     public class DBContext : DbContext
     {
+        /// <summary>
+        /// Набор сущностей <see cref="Prosthesis"/> соотв. таблице Prosthesis в БД
+        /// </summary>
         public DbSet<Prosthesis> Prostheses { get; set; }
 
+        /// <summary>
+        /// Инициализация нового контекста БД с инициализированной строкой подключения
+        /// </summary>
         public DBContext() : base("Data Source=(LocalDB)\\" +
             "MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\kesha\\Desktop\\уник\\2 курс" +
             "\\аис\\lab 1\\Data\\DBProstheses.mdf\";Integrated Security=True") { }
