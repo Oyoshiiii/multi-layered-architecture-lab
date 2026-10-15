@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblId = new System.Windows.Forms.Label();
-            this.TxtID = new System.Windows.Forms.TextBox();
             this.lblModelName = new System.Windows.Forms.Label();
             this.TxtModelName = new System.Windows.Forms.TextBox();
             this.lblBodyPart = new System.Windows.Forms.Label();
@@ -45,24 +43,6 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumPercentOfSanityLoss)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(13, 30);
-            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(23, 16);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "ID:";
-            // 
-            // TxtID
-            // 
-            this.TxtID.Location = new System.Drawing.Point(213, 27);
-            this.TxtID.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtID.Name = "TxtID";
-            this.TxtID.Size = new System.Drawing.Size(80, 22);
-            this.TxtID.TabIndex = 1;
             // 
             // lblModelName
             // 
@@ -224,8 +204,6 @@
             this.Controls.Add(this.lblBodyPart);
             this.Controls.Add(this.TxtModelName);
             this.Controls.Add(this.lblModelName);
-            this.Controls.Add(this.TxtID);
-            this.Controls.Add(this.lblId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -242,9 +220,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox TxtID;
         private System.Windows.Forms.Label lblModelName;
         private System.Windows.Forms.TextBox TxtModelName;
         private System.Windows.Forms.Label lblBodyPart;

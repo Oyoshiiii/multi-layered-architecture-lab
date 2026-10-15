@@ -41,8 +41,10 @@ namespace ViewWinForms
             GetAllProstheses(prostheses);
         }
 
-        private void GetAllProstheses(List<Prosthesis> prostheses)
+        private void GetAllProstheses(List<Prosthesis> prostheses = null)
         {
+            if (prostheses == null) prostheses = logic.GetAllProstheses();
+
             prosthesesDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             prosthesesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
@@ -67,7 +69,7 @@ namespace ViewWinForms
             var searchByIdForm = new SearchByIdForm(logic);
             searchByIdForm.ShowDialog();
 
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace ViewWinForms
             var addForm = new AddForm(logic, bodyParts, originList);
             addForm.ShowDialog();
 
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
 
         private void ChangeBtn_Click(object sender, EventArgs e)
@@ -91,7 +93,7 @@ namespace ViewWinForms
             var changeForm = new ChangeForm(prosthesis, logic, bodyParts, originList);
             changeForm.ShowDialog();
 
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
 
         private Prosthesis GetSelectedProsthesis()
@@ -124,24 +126,23 @@ namespace ViewWinForms
                 MessageBox.Show($"Протез ID: {prosthesis.Id} удален");
             }
 
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
 
         private void ascending_CheckedChanged(object sender, EventArgs e)
         {
-            if(ascending.Checked)
+            if (ascending.Checked)
             {
-                List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss(prostheses);
+                List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss();
                 GetAllProstheses(sortedProstheses);
             }
         }
 
         private void descending_CheckedChanged(object sender, EventArgs e)
         {
-
             if (descending.Checked)
             {
-                List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending(prostheses);
+                List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending();
                 GetAllProstheses(sortedProstheses);
             }
         }
@@ -151,7 +152,7 @@ namespace ViewWinForms
             var groupedForm = new GroupedByBodyPartsForm(logic);
             groupedForm.ShowDialog();
 
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
 
         private void FindByOriginBtn_Click(object sender, EventArgs e)
@@ -159,7 +160,7 @@ namespace ViewWinForms
             var findForm = new FindByOriginForm(logic);
             findForm.ShowDialog();
 
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
     }
 }

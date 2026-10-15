@@ -24,6 +24,8 @@ namespace ViewConsole
 
             while (userChoice != 10)
             {
+                prostheses = logic.GetAllProstheses();
+
                 Console.Write("[1.] Вывести все протезы\n" +
                     "[2.] Вывести протез по Id\n" +
                     "[3.] Добавить протез\n" +
@@ -68,10 +70,10 @@ namespace ViewConsole
                         FindByOrigin(logic, originList);
                         break;
                     case 8:
-                        SortPercentOfSanityLoss(prostheses, logic);
+                        SortByPercentOfSanityLossDescending(prostheses, logic);
                         break;
                     case 9:
-                        SortByPercentOfSanityLossDescending(prostheses, logic);
+                        SortPercentOfSanityLoss(prostheses, logic);
                         break;
                 }
 
@@ -95,28 +97,10 @@ namespace ViewConsole
         /// <param name="originList">Лист локаций/мест нахождения</param>
         static void Add(List<Prosthesis> prostheses, Logic logic, List<string> bodyParts, List<string> originList)
         {
-            int id = 0, percentOfSanityLoss = 0;
+            int percentOfSanityLoss = 0;
             string modelName, bodyPart, buffDescript, debuffDescript, origin;
 
             bool valid = false;
-
-            while (!valid)
-            {
-                Console.Write("Введите ID: ");
-
-                if (!int.TryParse(Console.ReadLine(), out id))
-                {
-                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова");
-                    continue;
-                }
-                if(prostheses.Find(pr => pr.Id == id) != null)
-                {
-                    Console.WriteLine("\n\t\t!! Протез с таким ID уже существует, попробуйте снова");
-                    continue;
-                }
-
-                valid = true;
-            }
 
             Console.Write("Введите название модели: ");
             modelName = Console.ReadLine();
@@ -198,7 +182,7 @@ namespace ViewConsole
             }
             origin = originList[originChoice - 1];
 
-            logic.AddProsthesis(id, modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
+            logic.AddProsthesis(modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
 
             Console.WriteLine("\nПротез добавлен");
         }
@@ -593,7 +577,7 @@ namespace ViewConsole
         /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         static void SortPercentOfSanityLoss(List<Prosthesis> prostheses, Logic logic)
         {
-            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss(prostheses);
+            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss();
             GetAll(sortedProstheses);
         }
 
@@ -604,7 +588,7 @@ namespace ViewConsole
         /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
         static void SortByPercentOfSanityLossDescending(List<Prosthesis> prostheses, Logic logic)
         {
-            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending(prostheses);
+            List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending();
             GetAll(sortedProstheses);
         }
     }

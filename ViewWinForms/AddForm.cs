@@ -39,25 +39,6 @@ namespace ViewWinForms
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TxtID.Text))
-            {
-                MessageBox.Show("Введите ID");
-                return;
-            }
-
-            if (!int.TryParse(TxtID.Text.Trim(), out int id))
-            {
-                MessageBox.Show("ID должен быть целым числом");
-                return;
-            }
-
-            var all = logic.GetAllProstheses();
-            if (all.Any(p => p.Id == id))
-            {
-                MessageBox.Show($"Протез с ID = {id} уже существует");
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(TxtModelName.Text))
             {
                 MessageBox.Show("Введите название модели");
@@ -84,7 +65,7 @@ namespace ViewWinForms
             string DebuffDescription = TxtDebuffDescript.Text.Trim();
             string Origin = CmbOrigin.SelectedItem.ToString();
 
-            logic.AddProsthesis(id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
+            logic.AddProsthesis(ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
             MessageBox.Show("Протез добавлен");
 
             this.Close();

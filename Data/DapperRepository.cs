@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,37 +24,32 @@ namespace Data
             "MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\kesha\\Desktop\\уник\\2 курс" +
             "\\аис\\lab 1\\Data\\DBProstheses.mdf\";Integrated Security=True";
 
-            tableName = "Prostheses";
+            tableName = "Prosthesis";
 
             properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         }
 
-        private void UseScript(string script)
+        private void UseScript(string script, T entityParameters = null)
         {
             if (!string.IsNullOrEmpty(script))
             {
                 using(IDbConnection db = new SqlConnection(connectionString))
                 {
-                    db.Execute(script);
+                    db.Execute(script, entityParameters);
                 }
             }
         }
 
-        public void Add(T obj)
+        public void Add(T entity)
         {
             var propertiesWithoutId = this.properties.Where(p => p.Name != "Id").ToArray();
 
-            string columns = "";
-            string values = "";
-            foreach (var prop in propertiesWithoutId)
-            {
-                columns += prop.Name + ", ";
-                values += "@" + prop.Name + ", ";
-            }
+            string columns = string.Join(", ", propertiesWithoutId.Select(p => p.Name));
+            string values = string.Join(", ", propertiesWithoutId.Select(p => "@" + p.Name));
 
             string script = $"INSERT INTO {tableName} ({columns}) VALUES ({values})";
 
-            UseScript(script);
+            UseScript(script, entity);
         }
         public IEnumerable<T> ReadAll()
         {
@@ -79,29 +75,26 @@ namespace Data
             return entity;
         }
 
-        public void Update(T obj)
+        public void Update(T entity)
         {
             var id = properties.FirstOrDefault(p => p.Name == "Id");
             var propertiesWithoutId = this.properties.Where(p => p.Name != "Id").ToArray();
 
-            string script = $"UPDATE {tableName} SET ";
+            string script = $"UPDATE {tableName} SET " + 
+                string.Join(", ", propertiesWithoutId.Select(p => $"{p.Name} = @{p.Name}")) + 
+                " WHERE Id = @Id";
 
-            foreach (var prop in propertiesWithoutId)
-            {
-                script += prop.Name + " = @" + prop.Name + ", ";
-            }
-
-            script += " WHERE Id = " + id;
-
-            UseScript(script);
+            UseScript(script, entity);
         }
 
-        public void Delete(T obj)
+        public void Delete(T entity)
         {
-            var id = properties.FirstOrDefault(p => p.Name == "Id");
-            string script = $"DELETE FROM {tableName} WHERE Id = " + id;
+            var idProperty = properties.FirstOrDefault(p => p.Name == "Id");
+            int id = (int)idProperty.GetValue(entity);
 
-            UseScript(script);
+            string script = $"DELETE FROM {tableName} WHERE Id = @Id";
+
+            UseScript(script, entity);
         }
     }
 }
