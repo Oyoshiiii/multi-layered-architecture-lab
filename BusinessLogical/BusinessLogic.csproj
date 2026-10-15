@@ -49,9 +49,13 @@
       <Project>{d9b1cc3f-8501-4cc4-9f33-3054e70c877c}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{b29b4a34-7030-42ff-bb74-a2d72c306b2f}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Entities.csproj">
       <Project>{590abd0a-4a06-48ce-967e-235f88ca9160}</Project>
-      <Name>Model</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -129,9 +129,9 @@
       <Project>{eea1c547-9606-435a-a231-823f1d537d04}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
+    <ProjectReference Include="..\Model\Entities.csproj">
       <Project>{590abd0a-4a06-48ce-967e-235f88ca9160}</Project>
-      <Name>Model</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

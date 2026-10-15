@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewConsole", "lab 1\ViewCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewWinForms", "ViewWinForms\ViewWinForms.csproj", "{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{590ABD0A-4A06-48CE-967E-235F88CA9160}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Model\Entities.csproj", "{590ABD0A-4A06-48CE-967E-235F88CA9160}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogical\BusinessLogic.csproj", "{EEA1C547-9606-435A-A231-823F1D537D04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "Data\DataLayer.csproj", "{D9B1CC3F-8501-4CC4-9F33-3054E70C877C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{B29B4A34-7030-42FF-BB74-A2D72C306B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D9B1CC3F-8501-4CC4-9F33-3054E70C877C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9B1CC3F-8501-4CC4-9F33-3054E70C877C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9B1CC3F-8501-4CC4-9F33-3054E70C877C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B29B4A34-7030-42FF-BB74-A2D72C306B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29B4A34-7030-42FF-BB74-A2D72C306B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29B4A34-7030-42FF-BB74-A2D72C306B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29B4A34-7030-42FF-BB74-A2D72C306B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
