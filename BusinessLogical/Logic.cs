@@ -111,7 +111,7 @@ namespace BusinessLogic
         /// <returns>Сгруппированный лист протезов</returns>
         public List<Prosthesis> GroupByAllBodyParts()
         {
-            return queryLogic.GroupByAllBodyParts();
+            return queryLogic.GroupByAllBodyParts(dataLogic.GetBodyParts());
         }
 
         /// <summary>

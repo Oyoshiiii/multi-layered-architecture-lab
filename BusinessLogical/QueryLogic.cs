@@ -11,23 +11,21 @@ namespace BusinessLogic
     public class QueryLogic
     {
         IRepository<Prosthesis> repository;
-        List<string> bodyParts;
 
         /// <summary>
         /// Инициализация экземпляра класса, отвечающего за сложные запросы (сортировка, группировка)
         /// </summary>
         /// <param name="repository">Репозиторий для доступа к данным протезов</param>
-        public QueryLogic(IRepository<Prosthesis> repository, DataLogic dataLogic)
+        public QueryLogic(IRepository<Prosthesis> repository)
         {
             this.repository = repository;
-            bodyParts = dataLogic.GetBodyParts();
         }
 
         /// <summary>
         /// Группирование по всем частям тела, за которые крепятся протезы
         /// </summary>
         /// <returns>Сгруппированный лист протезов</returns>
-        public List<Prosthesis> GroupByAllBodyParts()
+        public List<Prosthesis> GroupByAllBodyParts(List<string> bodyParts)
         {
             List<Prosthesis> groupedProstheses = new List<Prosthesis>();
             List<Prosthesis> prostheses = repository.ReadAll().ToList();

@@ -12,6 +12,9 @@ namespace BusinessLogic
 {
     public class SimpleConfigModule : NinjectModule
     {
+        /// <summary>
+        /// Настройка привязки DI контейнера
+        /// </summary>
         public override void Load()
         {
             Bind<IRepository<Prosthesis>>().To<EntityRepository<Prosthesis>>().InSingletonScope();
