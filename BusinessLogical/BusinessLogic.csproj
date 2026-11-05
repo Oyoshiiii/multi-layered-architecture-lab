@@ -7,8 +7,8 @@
     <ProjectGuid>{EEA1C547-9606-435A-A231-823F1D537D04}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessLogical</RootNamespace>
-    <AssemblyName>BusinessLogical</AssemblyName>
+    <RootNamespace>BusinessLogic</RootNamespace>
+    <AssemblyName>BusinessLogic</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -75,8 +75,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUDLogic.cs" />
+    <Compile Include="DataLogic.cs" />
     <Compile Include="Logic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryLogic.cs" />
     <Compile Include="SimpleConfigModule.cs" />
   </ItemGroup>
   <ItemGroup>

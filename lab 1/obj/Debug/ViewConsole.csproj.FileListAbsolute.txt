@@ -5,9 +5,7 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewConsole.csproj.CoreCompileInputs.cache
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.pdb
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogical.dll
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogical.pdb
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.pdb
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe.config
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons.26CF079E.Up2Date
@@ -41,7 +39,6 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.W
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.dll
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogical.dll.config
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Ninject.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Ninject.Web.Common.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Ninject.Web.Common.WebHost.xml
@@ -52,3 +49,6 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.W
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogic.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogic.pdb
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogic.dll.config

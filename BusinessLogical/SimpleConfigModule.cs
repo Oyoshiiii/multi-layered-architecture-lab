@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogical
+namespace BusinessLogic
 {
     public class SimpleConfigModule : NinjectModule
     {

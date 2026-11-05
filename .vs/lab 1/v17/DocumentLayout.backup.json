@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\changeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\changeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\findbyoriginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\findbyoriginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\groupedbybodypartsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\groupedbybodypartsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\searchbyidform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\searchbyidform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\crudlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\crudlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\simpleconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\simpleconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\querylogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\querylogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9B1CC3F-8501-4CC4-9F33-3054E70C877C}|Data\\DataLayer.csproj|C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\data\\dataprosthesis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9B1CC3F-8501-4CC4-9F33-3054E70C877C}|Data\\DataLayer.csproj|solutionrelative:data\\dataprosthesis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\datalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\datalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|solutionrelative:lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,106 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SearchByIdForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\SearchByIdForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\SearchByIdForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\SearchByIdForm.cs",
-              "RelativeToolTip": "ViewWinForms\\SearchByIdForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T17:14:29.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GroupedByBodyPartsForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "RelativeToolTip": "ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T17:14:10.816Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FindByOriginForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\FindByOriginForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\FindByOriginForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\FindByOriginForm.cs",
-              "RelativeToolTip": "ViewWinForms\\FindByOriginForm.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBoAAAAfAAAAAAAAAA==",
+              "Title": "QueryLogic.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\QueryLogic.cs",
+              "RelativeDocumentMoniker": "BusinessLogical\\QueryLogic.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\QueryLogic.cs",
+              "RelativeToolTip": "BusinessLogical\\QueryLogic.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T17:13:37.613Z",
+              "WhenOpened": "2026-11-05T19:12:45.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ChangeForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\ChangeForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\ChangeForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\ChangeForm.cs",
-              "RelativeToolTip": "ViewWinForms\\ChangeForm.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwCQAAAA1AAAAAAAAAA==",
+              "Title": "CRUDLogic.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\CRUDLogic.cs",
+              "RelativeDocumentMoniker": "BusinessLogical\\CRUDLogic.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\CRUDLogic.cs",
+              "RelativeToolTip": "BusinessLogical\\CRUDLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T17:13:29.214Z",
+              "WhenOpened": "2026-11-05T19:00:59.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataLogic.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\DataLogic.cs",
+              "RelativeDocumentMoniker": "BusinessLogical\\DataLogic.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\DataLogic.cs",
+              "RelativeToolTip": "BusinessLogical\\DataLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T18:30:41.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\MainForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\MainForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\MainForm.cs",
-              "RelativeToolTip": "ViewWinForms\\MainForm.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAQwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T17:04:29.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SimpleConfigModule.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\SimpleConfigModule.cs",
-              "RelativeDocumentMoniker": "BusinessLogical\\SimpleConfigModule.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\SimpleConfigModule.cs",
-              "RelativeToolTip": "BusinessLogical\\SimpleConfigModule.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T17:02:21.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Logic.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\Logic.cs",
               "RelativeDocumentMoniker": "BusinessLogical\\Logic.cs",
               "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\Logic.cs",
               "RelativeToolTip": "BusinessLogical\\Logic.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAH4AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-16T05:43:12.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataProsthesis.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Data\\DataProsthesis.cs",
-              "RelativeDocumentMoniker": "Data\\DataProsthesis.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Data\\DataProsthesis.cs",
-              "RelativeToolTip": "Data\\DataProsthesis.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\Program.cs",
+              "RelativeDocumentMoniker": "lab 1\\Program.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\Program.cs",
+              "RelativeToolTip": "lab 1\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T05:41:45.918Z",
+              "WhenOpened": "2026-11-05T18:50:13.358Z",
               "EditorCaption": ""
             }
           ]

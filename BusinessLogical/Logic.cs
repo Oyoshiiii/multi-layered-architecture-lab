@@ -12,17 +12,21 @@ namespace BusinessLogic
 {
     public class Logic
     {
-        public IRepository<Prosthesis> Repository { get; set; }
-
-        List<string> bodyParts;
-        List<string> origin;
+        DataLogic dataLogic;
+        CRUDLogic crudLogic;
+        QueryLogic queryLogic;
 
         /// <summary>
-        /// Инициализация нового экземпляра класса бизнес-логики <see cref="Logic"></see>
+        /// Инициализация фасада бизнес-логики, объединяющего работу со справочными материалами, CRUD-операциями и сложными запросами
         /// </summary>
-        public Logic(IRepository<Prosthesis> repository)
+        /// <param name="dataLogic">Экземпляр класса справочных материалов</param>
+        /// <param name="crudLogic">Экземпляр класса crud-операций</param>
+        /// <param name="queryLogic">экземпляр класса сложных запросов</param>
+        public Logic(DataLogic dataLogic, CRUDLogic crudLogic, QueryLogic queryLogic)
         {
-            Repository = repository;
+            this.dataLogic = dataLogic;
+            this.crudLogic = crudLogic;
+            this.queryLogic = queryLogic;
         }
         
         /// <summary>
@@ -37,17 +41,7 @@ namespace BusinessLogic
         /// <param name="origin">Локация/место нахождения</param>
         public void AddProsthesis(string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
         {
-            Prosthesis prosthesis = new Prosthesis()
-            {
-                ModelName = modelName,
-                BodyPart = bodyPart,
-                PercentOfSanityLoss = percentOfSanityLoss,
-                BuffDescription = buffDescript,
-                DebuffDescription = debuffDescript,
-                Origin = origin
-            };
-
-            Repository.Add(prosthesis);
+            crudLogic.AddProsthesis(modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
         }
 
         /// <summary>
@@ -56,7 +50,7 @@ namespace BusinessLogic
         /// <returns>Лист протезов</returns>
         public List<Prosthesis> GetAllProstheses()
         {
-            return Repository.ReadAll().ToList();
+            return crudLogic.GetAllProstheses();
         }
 
         /// <summary>
@@ -66,7 +60,7 @@ namespace BusinessLogic
         /// <returns>Протез</returns>
         public Prosthesis GetProsthesisById(int id)
         {
-            return Repository.ReadById(id);
+            return crudLogic.GetProsthesisById(id);
         }
 
         /// <summary>
@@ -81,19 +75,7 @@ namespace BusinessLogic
         /// <param name="origin">Локация/место нахождения</param>
         public void ChangeProsthesis(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
         {
-            Prosthesis prosthesis = GetProsthesisById(id);
-
-            if(prosthesis != null)
-            {
-                prosthesis.ModelName = modelName;
-                prosthesis.BodyPart = bodyPart;
-                prosthesis.PercentOfSanityLoss = percentOfSanityLoss;
-                prosthesis.BuffDescription = buffDescript;
-                prosthesis.DebuffDescription = debuffDescript;
-                prosthesis.Origin = origin;
-
-                Repository.Update(prosthesis);
-            }
+            crudLogic.ChangeProsthesis(id, modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
         }
 
         /// <summary>
@@ -102,12 +84,7 @@ namespace BusinessLogic
         /// <param name="id">ID протеза</param>
         public void DeleteProsthesis(int id)
         {
-            Prosthesis prosthesis = GetProsthesisById(id);
-
-            if(prosthesis != null)
-            {
-                Repository.Delete(prosthesis);
-            }
+            crudLogic.DeleteProsthesis(id);
         }
 
         /// <summary>
@@ -116,7 +93,7 @@ namespace BusinessLogic
         /// <returns>Лист частей тела</returns>
         public List<string> GetBodyPartsList()
         {
-            return bodyParts;
+            return dataLogic.GetBodyParts();
         }
 
         /// <summary>
@@ -125,7 +102,7 @@ namespace BusinessLogic
         /// <returns>Личт локаций/мест нахождения</returns>
         public List<string> GetOriginList()
         {
-            return origin;
+            return dataLogic.GetOrigin();
         }
 
         /// <summary>
@@ -134,18 +111,7 @@ namespace BusinessLogic
         /// <returns>Сгруппированный лист протезов</returns>
         public List<Prosthesis> GroupByAllBodyParts()
         {
-            List<Prosthesis> groupedProstheses = new List<Prosthesis>();
-            List<Prosthesis> prostheses = Repository.ReadAll().ToList();
-
-            foreach (string bodyPart in bodyParts)
-            {
-                List<Prosthesis> groupedBySpecificBodyPart = prostheses.Where(pr => pr.BodyPart ==  bodyPart).ToList();
-                groupedBySpecificBodyPart = SortByPercentOfSanityLoss(groupedBySpecificBodyPart);
-
-                groupedProstheses.AddRange(groupedBySpecificBodyPart);
-            }
-
-            return groupedProstheses;
+            return queryLogic.GroupByAllBodyParts();
         }
 
         /// <summary>
@@ -155,10 +121,7 @@ namespace BusinessLogic
         /// <returns>Сгруппированный лист протезов</returns>
         public List<Prosthesis> GroupBySpecificOrigin(string origin)
         {
-            List<Prosthesis> prostheses = Repository.ReadAll().ToList();
-            List<Prosthesis> groupedProstheses = prostheses.Where(pr => pr.Origin == origin).ToList();
-
-            return groupedProstheses;
+            return queryLogic.GroupBySpecificOrigin(origin);
         }
 
         /// <summary>
@@ -168,11 +131,7 @@ namespace BusinessLogic
         /// <returns>Сортированный лист протезов</returns>
         public List<Prosthesis> SortByPercentOfSanityLoss(List<Prosthesis> prosthesesList = null)
         {
-            List<Prosthesis> sortedProstheses;
-            if (prosthesesList == null) sortedProstheses = Repository.ReadAll().ToList().OrderBy(pr => pr.PercentOfSanityLoss).ToList();
-            else sortedProstheses = prosthesesList.OrderBy(pr => pr.PercentOfSanityLoss).ToList();
-
-            return sortedProstheses;
+            return queryLogic.SortByPercentOfSanityLoss(prosthesesList);
         }
 
         /// <summary>
@@ -182,10 +141,7 @@ namespace BusinessLogic
         /// <returns>Сортированный лист протезов</returns>
         public List<Prosthesis> SortByPercentOfSanityLossDescending()
         {
-            List<Prosthesis> prostheses = Repository.ReadAll().ToList();
-            List<Prosthesis> sortedProstheses = prostheses.OrderByDescending(pr => pr.PercentOfSanityLoss).ToList();
-
-            return sortedProstheses;
+            return queryLogic.SortByPercentOfSanityLossDescending();
         }
     }
 }

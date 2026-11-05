@@ -1,5 +1,4 @@
 ﻿using BusinessLogic;
-using BusinessLogical;
 using Entities;
 using Ninject;
 using System;
