@@ -14,7 +14,7 @@ namespace ViewWinForms
 {
     public partial class AddForm : Form
     {
-        Logic logic = new Logic();
+        Logic logic;
 
         /// <summary>
         /// Инициализация формы добавления протеза

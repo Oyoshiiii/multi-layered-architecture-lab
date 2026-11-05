@@ -14,7 +14,7 @@ namespace ViewWinForms
 {
     public partial class FindByOriginForm : Form
     {
-        Logic logic = new Logic();
+        Logic logic;
         List<Prosthesis> prostheses = new List<Prosthesis>();
 
         /// <summary>
@@ -24,6 +24,7 @@ namespace ViewWinForms
         public FindByOriginForm(Logic logic)
         {
             InitializeComponent();
+            this.logic = logic;
             CmbOrigin.DataSource = logic.GetOriginList();
         }
 

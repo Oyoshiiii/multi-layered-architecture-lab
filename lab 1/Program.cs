@@ -1,5 +1,7 @@
 ﻿using BusinessLogic;
+using BusinessLogical;
 using Entities;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,10 @@ namespace ViewConsole
     {
         static void Main(string[] args)
         {
-            Logic logic = new Logic();
+            IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
+            Logic logic = ninjectKernel.Get<Logic>();
 
-            List<Prosthesis> prostheses = logic.GetAllProstheses();
+            List<Prosthesis> prostheses;
 
             List<string> bodyParts = logic.GetBodyPartsList();
             List<string> originList = logic.GetOriginList();
@@ -555,7 +558,7 @@ namespace ViewConsole
                     Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
                     continue;
                 }
-                if (originChoice < 1 || originChoice > 5)
+                if (originChoice < 1 || originChoice > originList.Count)
                 {
                     Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
                     continue;

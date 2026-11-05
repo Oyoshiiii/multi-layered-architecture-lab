@@ -12,23 +12,17 @@ namespace BusinessLogic
 {
     public class Logic
     {
-        DataProsthesis data = new DataProsthesis();
+        public IRepository<Prosthesis> Repository { get; set; }
 
-        IRepository<Prosthesis> repository;
-
-        List<string> bodyParts = new List<string>();
-        List<string> origin = new List<string>();
+        List<string> bodyParts;
+        List<string> origin;
 
         /// <summary>
         /// Инициализация нового экземпляра класса бизнес-логики <see cref="Logic"></see>
         /// </summary>
-        public Logic()
+        public Logic(IRepository<Prosthesis> repository)
         {
-            repository = new EntityRepository<Prosthesis>(new DBContext());
-            //repository = new DapperRepository<Prosthesis>();
-
-            bodyParts = DataProsthesis.BodyParts;
-            origin = DataProsthesis.Origin;
+            Repository = repository;
         }
         
         /// <summary>
@@ -53,7 +47,7 @@ namespace BusinessLogic
                 Origin = origin
             };
 
-            repository.Add(prosthesis);
+            Repository.Add(prosthesis);
         }
 
         /// <summary>
@@ -62,7 +56,7 @@ namespace BusinessLogic
         /// <returns>Лист протезов</returns>
         public List<Prosthesis> GetAllProstheses()
         {
-            return repository.ReadAll().ToList();
+            return Repository.ReadAll().ToList();
         }
 
         /// <summary>
@@ -72,7 +66,7 @@ namespace BusinessLogic
         /// <returns>Протез</returns>
         public Prosthesis GetProsthesisById(int id)
         {
-            return repository.ReadById(id);
+            return Repository.ReadById(id);
         }
 
         /// <summary>
@@ -97,9 +91,9 @@ namespace BusinessLogic
                 prosthesis.BuffDescription = buffDescript;
                 prosthesis.DebuffDescription = debuffDescript;
                 prosthesis.Origin = origin;
-            }
 
-            repository.Update(prosthesis);
+                Repository.Update(prosthesis);
+            }
         }
 
         /// <summary>
@@ -112,7 +106,7 @@ namespace BusinessLogic
 
             if(prosthesis != null)
             {
-                repository.Delete(prosthesis);
+                Repository.Delete(prosthesis);
             }
         }
 
@@ -141,7 +135,7 @@ namespace BusinessLogic
         public List<Prosthesis> GroupByAllBodyParts()
         {
             List<Prosthesis> groupedProstheses = new List<Prosthesis>();
-            List<Prosthesis> prostheses = repository.ReadAll().ToList();
+            List<Prosthesis> prostheses = Repository.ReadAll().ToList();
 
             foreach (string bodyPart in bodyParts)
             {
@@ -161,8 +155,9 @@ namespace BusinessLogic
         /// <returns>Сгруппированный лист протезов</returns>
         public List<Prosthesis> GroupBySpecificOrigin(string origin)
         {
-            List<Prosthesis> prostheses = repository.ReadAll().ToList();
+            List<Prosthesis> prostheses = Repository.ReadAll().ToList();
             List<Prosthesis> groupedProstheses = prostheses.Where(pr => pr.Origin == origin).ToList();
+
             return groupedProstheses;
         }
 
@@ -174,8 +169,9 @@ namespace BusinessLogic
         public List<Prosthesis> SortByPercentOfSanityLoss(List<Prosthesis> prosthesesList = null)
         {
             List<Prosthesis> sortedProstheses;
-            if (prosthesesList == null) sortedProstheses = repository.ReadAll().ToList().OrderBy(pr => pr.PercentOfSanityLoss).ToList();
+            if (prosthesesList == null) sortedProstheses = Repository.ReadAll().ToList().OrderBy(pr => pr.PercentOfSanityLoss).ToList();
             else sortedProstheses = prosthesesList.OrderBy(pr => pr.PercentOfSanityLoss).ToList();
+
             return sortedProstheses;
         }
 
@@ -186,7 +182,7 @@ namespace BusinessLogic
         /// <returns>Сортированный лист протезов</returns>
         public List<Prosthesis> SortByPercentOfSanityLossDescending()
         {
-            List<Prosthesis> prostheses = repository.ReadAll().ToList();
+            List<Prosthesis> prostheses = Repository.ReadAll().ToList();
             List<Prosthesis> sortedProstheses = prostheses.OrderByDescending(pr => pr.PercentOfSanityLoss).ToList();
 
             return sortedProstheses;

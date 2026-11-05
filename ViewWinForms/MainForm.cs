@@ -1,5 +1,7 @@
 ﻿using BusinessLogic;
+using BusinessLogical;
 using Entities;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +16,13 @@ namespace ViewWinForms
 {
     public partial class MainForm : Form
     {
-        Logic logic = new Logic();
-        List<Prosthesis> prostheses = new List<Prosthesis>();
+        IKernel ninjectKernel;
+        Logic logic;
 
-        List<string> bodyParts = new List<string>();
-        List<string> originList = new List<string>();
+        List<Prosthesis> prostheses;
+
+        List<string> bodyParts;
+        List<string> originList;
 
         /// <summary>
         /// Инициализация главной формы
@@ -26,6 +30,9 @@ namespace ViewWinForms
         public MainForm()
         {
             InitializeComponent();
+
+            ninjectKernel = new StandardKernel(new SimpleConfigModule());
+            logic = ninjectKernel.Get<Logic>();
 
             prostheses = logic.GetAllProstheses();
 
@@ -35,15 +42,18 @@ namespace ViewWinForms
 
         private void GetAllBtn_Click(object sender, EventArgs e)
         {
-            ascending.Checked = false;
-            descending.Checked = false;
-
-            GetAllProstheses(prostheses);
+            GetAllProstheses();
         }
 
         private void GetAllProstheses(List<Prosthesis> prostheses = null)
         {
-            if (prostheses == null) prostheses = logic.GetAllProstheses();
+            if (prostheses == null)
+            {
+                ascending.Checked = false;
+                descending.Checked = false;
+
+                prostheses = logic.GetAllProstheses();
+            }
 
             prosthesesDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             prosthesesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;

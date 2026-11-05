@@ -14,7 +14,7 @@ namespace ViewWinForms
 {
     public partial class SearchByIdForm : Form
     {
-        Logic logic = new Logic();
+        Logic logic;
 
         /// <summary>
         /// Инициализация формы поиска протеза по ID

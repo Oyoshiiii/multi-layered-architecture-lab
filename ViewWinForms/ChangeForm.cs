@@ -14,7 +14,7 @@ namespace ViewWinForms
 {
     public partial class ChangeForm : Form
     {
-        Logic logic = new Logic();
+        Logic logic;
         Prosthesis prosthesis;
 
         /// <summary>
