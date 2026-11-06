@@ -91,6 +91,75 @@ namespace ViewConsole
         }
 
         /// <summary>
+        /// Проверка валидации выбора с ограничением по минимальному и максимальному значению
+        /// </summary>
+        /// <param name="minVal">мин значение</param>
+        /// <param name="maxVal">макс значение</param>
+        /// <param name="choice">выбор</param>
+        /// <param name="msg">сообщение вывода при ошибке ввода</param>
+        /// <returns>значение выбора подходящее под валидацию</returns>
+        static int CheckChoiceValidation(int minVal, int maxVal, int choice, string msg = "")
+        {
+            while(choice < minVal || choice > maxVal)
+            {
+                Console.WriteLine(msg);
+                choice = Convert.ToInt32(Console.ReadLine());
+            }
+
+            return choice;
+        }
+
+        /// <summary>
+        /// Проверка валидации попыткой парсить выбор в int
+        /// </summary>
+        /// <returns>значение ввода в типе int подходящее под валидацию</returns>
+        static int TryParseInputToInt()
+        {
+            int resultInput = 0;
+
+            while (true)
+            {
+                if(int.TryParse(Console.ReadLine(), out resultInput))
+                {
+                    return resultInput; 
+                }
+
+                Console.Write("\n\t\t!! Ошибка ввода, попробуйте снова\n\nВвод: ");
+            }
+        }
+
+        /// <summary>
+        /// Полная проверка валидации с парсом и проверкой выбора от мин до макс значения
+        /// </summary>
+        /// <param name="msg">сообщение при ошибке ввода</param>
+        /// <param name="minVal">мин значение</param>
+        /// <param name="maxVal">макс значение</param>
+        /// <returns>значение выбора подходящее под валидацию</returns>
+        static int FullValidationCheck(string msg, int minVal, int maxVal)
+        {
+            int result = 0;
+            bool valid = false;
+
+            while (!valid)
+            {
+                if (!int.TryParse(Console.ReadLine(), out result))
+                {
+                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
+                    continue;
+                }
+                if (result < minVal || result > maxVal)
+                {
+                    Console.WriteLine(msg);
+                    continue;
+                }
+
+                valid = true;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Консольное добавление протеза
         /// </summary>
         /// <param name="prostheses">Лист протезов</param>
@@ -107,49 +176,19 @@ namespace ViewConsole
             Console.Write("Введите название модели: ");
             modelName = Console.ReadLine();
 
-            valid = false;
-            while (!valid)
+            Console.Write("Введите % потери рассудка от применения протеза (от 2 до 90): ");
+
+            percentOfSanityLoss = FullValidationCheck("\n\t\t% потери рассудка вне диапазона, попробуйте снова\n", 2, 90);
+
+            Console.WriteLine("Выберите часть тела, на которую крепится протез или которую он заменяет");
+            for (int i = 0; i < bodyParts.Count; i++)
             {
-                Console.Write("Введите % потери рассудка от применения протеза (от 2 до 90): ");
-
-                if (!int.TryParse(Console.ReadLine(), out percentOfSanityLoss))
-                {
-                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                    continue;
-                }
-                if (percentOfSanityLoss < 2 || percentOfSanityLoss > 90)
-                {
-                    Console.WriteLine("\n\t\t!! Такого % потери рассудка не может быть у протеза, попробуйте снова\n");
-                    continue;
-                }
-
-                valid = true;
+                Console.WriteLine($"[{i + 1}.] {bodyParts[i]}");
             }
+            Console.Write("Ввод: ");
 
-            int bodyPartChoice = 0;
-            valid = false;
-            while (!valid)
-            {
-                Console.WriteLine("Выберите часть тела, на которую крепится протез или которую он заменяет");
-                for(int i = 0; i < bodyParts.Count; i++ )
-                {
-                    Console.WriteLine($"[{i + 1}.] {bodyParts[i]}");
-                }
-                Console.Write("Ввод: ");
+            int bodyPartChoice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, bodyParts.Count);
 
-                if (!int.TryParse(Console.ReadLine(), out bodyPartChoice))
-                {
-                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                    continue;
-                }
-                if (bodyPartChoice < 1 || bodyPartChoice > bodyParts.Count)
-                {
-                    Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                    continue;
-                }
-
-                valid = true;
-            }
             bodyPart = bodyParts[bodyPartChoice - 1];
 
             Console.Write("Введите описание баффов: ");
@@ -158,30 +197,15 @@ namespace ViewConsole
             Console.Write("Введите описание дебаффов: ");
             debuffDescript = Console.ReadLine();
 
-            int originChoice = 0;
-            valid = false;
-            while (!valid)
+            Console.WriteLine("Выберите локацию/место нахождения протеза");
+            for (int i = 0; i < originList.Count; i++)
             {
-                Console.WriteLine("Выберите локацию/место нахождения протеза");
-                for (int i = 0; i < originList.Count; i++)
-                {
-                    Console.WriteLine($"[{i + 1}.] {originList[i]}");
-                }
-                Console.Write("Ввод: ");
-
-                if (!int.TryParse(Console.ReadLine(), out originChoice))
-                {
-                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                    continue;
-                }
-                if (originChoice < 1 || originChoice > originList.Count)
-                {
-                    Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                    continue;
-                }
-
-                valid = true;
+                Console.WriteLine($"[{i + 1}.] {originList[i]}");
             }
+            Console.Write("Ввод: ");
+
+            int originChoice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, originList.Count);
+            
             origin = originList[originChoice - 1];
 
             logic.AddProsthesis(modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
@@ -223,10 +247,7 @@ namespace ViewConsole
 
             Console.Write("\nВведите ID протеза: ");
 
-            while(!int.TryParse(Console.ReadLine(), out id))
-            {
-                Console.Write("\n\t\t!! Ошибка ввода, попробуйте снова\n\nВвод: ");
-            }
+            id = TryParseInputToInt();
 
             Prosthesis prosthesis = prostheses.Find(pr => pr.Id == id);
 
@@ -254,10 +275,7 @@ namespace ViewConsole
             GetAll(prostheses);
             Console.Write("\nВведите ID протеза, который надо изменить: ");
 
-            while (!int.TryParse(Console.ReadLine(), out id))
-            {
-                Console.Write("\n\t\t!! Ошибка ввода, попробуйте снова\n\nВвод: ");
-            }
+            id = TryParseInputToInt();
 
             Prosthesis prosthesis = prostheses.Find(pr => pr.Id == id);
 
@@ -266,25 +284,8 @@ namespace ViewConsole
                 int choice = 0, percentOfSanityLoss = 0;
                 string modelName, bodyPart, buffDescript, debuffDescript, origin;
 
-                bool valid = false;
-
-                while (!valid)
-                {
-                    Console.Write("Изменить имя?\n[1.] Да\n[2.] Нет\nВвод: ");
-
-                    if (!int.TryParse(Console.ReadLine(), out choice))
-                    {
-                        Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                        continue;
-                    }
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                        continue;
-                    }
-
-                    valid = true;
-                }
+                Console.Write("Изменить имя?\n[1.] Да\n[2.] Нет\nВвод: ");
+                choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, 2);
 
                 if (choice == 1)
                 {
@@ -293,114 +294,35 @@ namespace ViewConsole
                 }
                 else modelName = prostheses.Find(pr => pr.Id == id).ModelName;
 
-                valid = false;
-                while (!valid)
-                {
-                    Console.Write("Изменить % потери рассудка?\n[1.] Да\n[2.] Нет\nВвод: ");
-
-                    if (!int.TryParse(Console.ReadLine(), out choice))
-                    {
-                        Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                        continue;
-                    }
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                        continue;
-                    }
-
-                    valid = true;
-                }
+                Console.Write("Изменить % потери рассудка?\n[1.] Да\n[2.] Нет\nВвод: ");
+                choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, 2);
 
                 if(choice == 1)
                 {
-                    valid = false;
-                    while (!valid)
-                    {
-                        Console.Write("Введите новый % потери рассудка (от 2 до 90): ");
-
-                        if (!int.TryParse(Console.ReadLine(), out percentOfSanityLoss))
-                        {
-                            Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                            continue;
-                        }
-                        if (percentOfSanityLoss < 2 || percentOfSanityLoss > 90)
-                        {
-                            Console.WriteLine("\n\t\t!! Такого % потери рассудка не может быть у протеза, попробуйте снова\n");
-                            continue;
-                        }
-
-                        valid = true;
-                    }
+                    Console.Write("Введите новый % потери рассудка (от 2 до 90): ");
+                    percentOfSanityLoss = FullValidationCheck("\n\t\t!! Такого % потери рассудка не может быть у протеза, попробуйте снова\n", 2, 90);
                 }
                 else percentOfSanityLoss = prostheses.Find(pr => pr.Id == id).PercentOfSanityLoss;
 
-                valid = false;
-                while (!valid)
-                {
-                    Console.Write("Изменить часть тела?\n[1.] Да\n[2.] Нет\nВвод: ");
-
-                    if (!int.TryParse(Console.ReadLine(), out choice))
-                    {
-                        Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                        continue;
-                    }
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                        continue;
-                    }
-
-                    valid = true;
-                }
+                Console.Write("Изменить часть тела?\n[1.] Да\n[2.] Нет\nВвод: ");
+                choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, 2);
 
                 if (choice == 1)
                 {
-                    valid = false;
-                    while (!valid)
+                    Console.WriteLine("Выберите часть тела, на которую крепится протез или которую он заменяет");
+                    for (int i = 0; i < bodyParts.Count; i++)
                     {
-                        Console.WriteLine("Выберите часть тела, на которую крепится протез или которую он заменяет");
-                        for (int i = 0; i < bodyParts.Count; i++)
-                        {
-                            Console.WriteLine($"[{i + 1}.] {bodyParts[i]}");
-                        }
-                        Console.Write("Ввод: ");
-
-                        if (!int.TryParse(Console.ReadLine(), out choice))
-                        {
-                            Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                            continue;
-                        }
-                        if (choice < 1 || choice > bodyParts.Count)
-                        {
-                            Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                            continue;
-                        }
-
-                        valid = true;
+                        Console.WriteLine($"[{i + 1}.] {bodyParts[i]}");
                     }
+                    Console.Write("Ввод: ");
+                    choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, bodyParts.Count);
+
                     bodyPart = bodyParts[choice - 1];
                 }
                 else bodyPart = prostheses.Find(pr => pr.Id == id).BodyPart;
 
-                valid = false;
-                while (!valid)
-                {
-                    Console.Write("Изменить баффы?\n[1.] Да\n[2.] Нет\nВвод: ");
-
-                    if (!int.TryParse(Console.ReadLine(), out choice))
-                    {
-                        Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                        continue;
-                    }
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                        continue;
-                    }
-
-                    valid = true;
-                }
+                Console.Write("Изменить баффы?\n[1.] Да\n[2.] Нет\nВвод: ");
+                choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, 2);
 
                 if (choice == 1)
                 {
@@ -409,24 +331,8 @@ namespace ViewConsole
                 }
                 else buffDescript = prostheses.Find(pr => pr.Id == id).BuffDescription;
 
-                valid = false;
-                while (!valid)
-                {
-                    Console.Write("Изменить дебаффы?\n[1.] Да\n[2.] Нет\nВвод: ");
-
-                    if (!int.TryParse(Console.ReadLine(), out choice))
-                    {
-                        Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                        continue;
-                    }
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                        continue;
-                    }
-
-                    valid = true;
-                }
+                Console.Write("Изменить дебаффы?\n[1.] Да\n[2.] Нет\nВвод: ");
+                choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, 2);
 
                 if (choice == 1)
                 {
@@ -435,50 +341,19 @@ namespace ViewConsole
                 }
                 else debuffDescript = prostheses.Find(pr => pr.Id == id).DebuffDescription;
 
-                valid = false;
-                while (!valid)
-                {
-                    Console.Write("Изменить локацию/место нахождения?\n[1.] Да\n[2.] Нет\nВвод: ");
-
-                    if (!int.TryParse(Console.ReadLine(), out choice))
-                    {
-                        Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                        continue;
-                    }
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                        continue;
-                    }
-
-                    valid = true;
-                }
+                Console.Write("Изменить локацию/место нахождения?\n[1.] Да\n[2.] Нет\nВвод: ");
+                choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, 2);
 
                 if (choice == 1)
                 {
-                    valid = false;
-                    while (!valid)
+                    Console.WriteLine("Выберите локацию/место нахождения протеза:");
+                    for (int i = 0; i < originList.Count; i++)
                     {
-                        Console.WriteLine("Выберите локацию/место нахождения протеза:");
-                        for (int i = 0; i < originList.Count; i++)
-                        {
-                            Console.WriteLine($"[{i + 1}.] {originList[i]}");
-                        }
-                        Console.Write("Ввод: ");
-
-                        if (!int.TryParse(Console.ReadLine(), out choice))
-                        {
-                            Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                            continue;
-                        }
-                        if (choice < 1 || choice > originList.Count)
-                        {
-                            Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                            continue;
-                        }
-
-                        valid = true;
+                        Console.WriteLine($"[{i + 1}.] {originList[i]}");
                     }
+                    Console.Write("Ввод: ");
+                    choice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, originList.Count);
+
                     origin = originList[choice - 1];
                 }
                 else origin = prostheses.Find(pr => pr.Id == id).Origin;
@@ -504,10 +379,7 @@ namespace ViewConsole
             GetAll(prostheses);
             Console.Write("\nВведите ID протеза, который надо удалить: ");
 
-            while (!int.TryParse(Console.ReadLine(), out id))
-            {
-                Console.Write("\n\t\t!! Ошибка ввода, попробуйте снова\n\nВвод: ");
-            }
+            id = TryParseInputToInt();
 
             Prosthesis prosthesis = prostheses.Find(pr => pr.Id == id);
 
@@ -543,28 +415,13 @@ namespace ViewConsole
             bool valid = false;
             int originChoice = 0;
 
-            while (!valid)
+            Console.WriteLine("Выберите локацию/место нахождения для вывода протезов, которые можно там найти");
+            for (int i = 0; i < originList.Count; i++)
             {
-                Console.WriteLine("Выберите локацию/место нахождения для вывода протезов, которые можно там найти");
-                for (int i = 0; i < originList.Count; i++)
-                {
-                    Console.WriteLine($"[{i + 1}.] {originList[i]}");
-                }
-                Console.Write("Ввод: ");
-
-                if (!int.TryParse(Console.ReadLine(), out originChoice))
-                {
-                    Console.WriteLine("\n\t\t!! Ошибка ввода, попробуйте снова\n");
-                    continue;
-                }
-                if (originChoice < 1 || originChoice > originList.Count)
-                {
-                    Console.WriteLine("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n");
-                    continue;
-                }
-
-                valid = true;
+                Console.WriteLine($"[{i + 1}.] {originList[i]}");
             }
+            Console.Write("Ввод: ");
+            originChoice = FullValidationCheck("\n\t\t!! Такого варианта ответа нет, попробуйте снова\n", 1, originList.Count);
 
             string chosenOrigin = originList[originChoice - 1];
             List<Prosthesis> groupedProstheses = logic.GroupBySpecificOrigin(chosenOrigin);
