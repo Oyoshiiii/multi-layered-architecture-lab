@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|solutionrelative:lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\crudlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\crudlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\simpleconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\simpleconfigmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\querylogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\querylogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\datalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\datalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\crudlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\crudlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|solutionrelative:lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\businesslogical\\datalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEA1C547-9606-435A-A231-823F1D537D04}|BusinessLogical\\BusinessLogic.csproj|solutionrelative:businesslogical\\datalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,19 +43,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SimpleConfigModule.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\SimpleConfigModule.cs",
+              "RelativeDocumentMoniker": "BusinessLogical\\SimpleConfigModule.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\SimpleConfigModule.cs",
+              "RelativeToolTip": "BusinessLogical\\SimpleConfigModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T19:33:43.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "QueryLogic.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\QueryLogic.cs",
               "RelativeDocumentMoniker": "BusinessLogical\\QueryLogic.cs",
               "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\QueryLogic.cs",
               "RelativeToolTip": "BusinessLogical\\QueryLogic.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-05T19:12:45.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CRUDLogic.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\CRUDLogic.cs",
               "RelativeDocumentMoniker": "BusinessLogical\\CRUDLogic.cs",
@@ -64,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DataLogic.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\DataLogic.cs",
               "RelativeDocumentMoniker": "BusinessLogical\\DataLogic.cs",
@@ -77,26 +94,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Logic.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\Logic.cs",
               "RelativeDocumentMoniker": "BusinessLogical\\Logic.cs",
               "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\BusinessLogical\\Logic.cs",
               "RelativeToolTip": "BusinessLogical\\Logic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-16T05:43:12.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\Program.cs",
               "RelativeDocumentMoniker": "lab 1\\Program.cs",
               "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\Program.cs",
               "RelativeToolTip": "lab 1\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAgwG0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-05T18:50:13.358Z",
               "EditorCaption": ""

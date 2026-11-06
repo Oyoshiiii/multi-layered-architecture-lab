@@ -24,7 +24,6 @@ namespace BusinessLogic
         /// <summary>
         /// Добавление протеза в лист протезов
         /// </summary>
-        /// <param name="id">ID протеза</param>
         /// <param name="modelName">Модель протеза</param>
         /// <param name="bodyPart">Часть тела на которую прикрепляется протез</param>
         /// <param name="percentOfSanityLoss">% потери рассудка</param>

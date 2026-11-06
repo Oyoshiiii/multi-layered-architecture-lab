@@ -27,12 +27,14 @@ namespace Data
         /// <param name="entity">Добавляемая сущность</param>
         public void Add(T entity)
         {
+            if (entity == null) return;
+
             _context.Set<T>().Add(entity);
             _context.SaveChanges();
         }
 
         /// <summary>
-        /// Чтение всех сущностей из БД
+        /// Чтение всех сущностей из БД; если сущностей нет, ничего не происходит
         /// </summary>
         /// <returns>Лист сущностей</returns>
         public IEnumerable<T> ReadAll()
@@ -41,7 +43,7 @@ namespace Data
         }
 
         /// <summary>
-        /// Чтение сущности по Id из БД
+        /// Чтение сущности по Id из БД; если сущность не находится, ничего не происходит
         /// </summary>
         /// <param name="id">Id сущности</param>
         /// <returns>Сущность</returns>
@@ -51,11 +53,13 @@ namespace Data
         }
 
         /// <summary>
-        /// Обновление сущности в БД
+        /// Обновление сущности в БД; если сущности нет такой, ничего не происходит
         /// </summary>
         /// <param name="entity">Обновляемая сущность</param>
         public void Update(T entity)
         {
+            if (entity == null) return;
+
             var origin = _context.Set<T>().Find(entity.Id);
             if (origin == null) return;
 
@@ -69,11 +73,13 @@ namespace Data
         }
 
         /// <summary>
-        /// Удаление сущности из БД
+        /// Удаление сущности из БД; если сущности нет такой, ничего не происходит
         /// </summary>
         /// <param name="entity">Удаляемая сущность</param>
         public void Delete(T entity)
         {
+            if (entity == null) return;
+
             _context.Set<T>().Remove(entity);
             _context.SaveChanges();
         }

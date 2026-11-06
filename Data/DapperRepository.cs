@@ -49,6 +49,8 @@ namespace Data
         /// <param name="entity">Добавляемая сущность</param>
         public void Add(T entity)
         {
+            if (entity == null) return;
+
             var propertiesWithoutId = this.properties.Where(p => p.Name != "Id").ToArray();
 
             string columns = string.Join(", ", propertiesWithoutId.Select(p => p.Name));
@@ -98,11 +100,13 @@ namespace Data
         /// <param name="entity">Обновляемая сущность</param>
         public void Update(T entity)
         {
+            if (entity == null) return;
+
             var id = properties.FirstOrDefault(p => p.Name == "Id");
             var propertiesWithoutId = this.properties.Where(p => p.Name != "Id").ToArray();
 
-            string script = $"UPDATE {tableName} SET " + 
-                string.Join(", ", propertiesWithoutId.Select(p => $"{p.Name} = @{p.Name}")) + 
+            string script = $"UPDATE {tableName} SET " +
+                string.Join(", ", propertiesWithoutId.Select(p => $"{p.Name} = @{p.Name}")) +
                 " WHERE Id = @Id";
 
             UseScript(script, entity);
@@ -114,6 +118,8 @@ namespace Data
         /// <param name="entity">Удаляемая сущность</param>
         public void Delete(T entity)
         {
+            if (entity == null) return;
+
             var idProperty = properties.FirstOrDefault(p => p.Name == "Id");
             int id = (int)idProperty.GetValue(entity);
 

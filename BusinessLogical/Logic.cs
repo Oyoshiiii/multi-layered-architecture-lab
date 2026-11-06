@@ -32,7 +32,6 @@ namespace BusinessLogic
         /// <summary>
         /// Добавление протеза в лист протезов
         /// </summary>
-        /// <param name="id">ID протеза</param>
         /// <param name="modelName">Модель протеза</param>
         /// <param name="bodyPart">Часть тела на которую прикрепляется протез</param>
         /// <param name="percentOfSanityLoss">% потери рассудка</param>
@@ -137,7 +136,6 @@ namespace BusinessLogic
         /// <summary>
         /// Сортирование по убыванию % потери рассудка
         /// </summary>
-        /// <param name="prosthesesList">% потери рассудка</param>
         /// <returns>Сортированный лист протезов</returns>
         public List<Prosthesis> SortByPercentOfSanityLossDescending()
         {
