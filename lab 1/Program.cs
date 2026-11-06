@@ -171,8 +171,6 @@ namespace ViewConsole
             int percentOfSanityLoss = 0;
             string modelName, bodyPart, buffDescript, debuffDescript, origin;
 
-            bool valid = false;
-
             Console.Write("Введите название модели: ");
             modelName = Console.ReadLine();
 
@@ -412,7 +410,6 @@ namespace ViewConsole
         /// <param name="originList">Лист локаций/мест нахождения</param>
         static void FindByOrigin(Logic logic, List<string> originList)
         {
-            bool valid = false;
             int originChoice = 0;
 
             Console.WriteLine("Выберите локацию/место нахождения для вывода протезов, которые можно там найти");
